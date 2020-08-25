@@ -1,0 +1,43 @@
+1、Node.js模块系统：
+  （1）官方模块：不需要下载，有的模块需要引入，有的模块不需要：require("模块名");
+  （2）第三方模块：需要 npm 下载：npm i 包名，自动放到一个node_modules文件夹只用：require("包名");
+  （3）自定义模块：
+	文件模块：
+	  circle.js： exports.size=fn
+	  app.js：require("./circle")
+
+	目录模块：
+	  node_modules/mysql/xx.js：exports.conn=fn
+	  node_modules/mysql/package.json：{main:"xx.js"}
+	  app.js：require("mysql")
+
+2、node.js官方模块
+   1、url模块 - 需要引入
+	const url=require("url");
+	var obj=url.parse("完整的http请求地址",true);
+
+   2、fs模块 - 需要引入
+	const fs=require("fs");
+	异步好处：效率高
+	读取：
+	fs.readFile("./文件路径",(err,buf)=>{
+		//此回调函数只有读取完毕后才会执行
+	})
+      
+	写入/追加
+	fs.write/appendFile("./文件路径",str/buf,(err)=>{
+		//此回调函数只有写入完毕后才会执行
+	})
+
+   3、http - 需要引入
+	const http=require("http");
+
+	1、创建服务器
+	   var app=http.createServer();
+	2、绑定监听端口
+	   app.listen(80)
+	3、为服务器绑定监听请求事件，只要客户端发起请求就会触发的事件
+	   app.on("request",(req,res)=>{
+		//req：请求消息的对象：req.url获取路由、查询字符串部分
+		//res：相应对象：res.end(str/buf)
+	   })

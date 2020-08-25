@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="css/4_1.css" />
+	<style>
+		.active {
+			z-index: 1;
+		}
+	</style>
+
+</head>
+
+<body>
+	<h2>实现多标签页效果</h2>
+	<div id="father">
+		<ul id="tab">
+
+		</ul>
+		<div id="container">
+
+		</div>
+	</div>
+	<script type="text/javascript">
+		var data = [
+			{ "title": "10元套餐", "content": "10元套餐详情：<br />&nbsp;每月套餐内拨打100分钟，超出部分2毛/分钟" },
+			{ "title": "30元套餐", "content": "30元套餐详情：<br />&nbsp;每月套餐内拨打300分钟，超出部分1.5毛/分钟" },
+			{ "title": "50元包月", "content": "50元包月详情：<br />&nbsp;每月套餐内拨打500分钟，超出部分1.5毛/分钟" },
+		];
+		//拿到title的值创建li
+		//拿到content的值创建div
+	
+
+
+
+
+
+
+
+
+		//面向对象
+		// 生成元素
+		// 修饰元素
+		// 放到页面
+
+		// function Tab() {
+		// 	this.alis = null;
+		// 	this.aps = null;
+		// 	this.data = data;
+		// 	this.odiv = document.querySelector("#container");
+		// 	this.oul = document.querySelector("ul");
+		// }
+		// Tab.prototype.init = function () {
+		// 	this.create();
+		// }
+		// Tab.prototype.create = function () {
+		// 	for (let i = 0; i < this.data.length; i++) {
+		// 		this.alis = document.createElement("li");
+		// 		this.alis.innerHTML = this.data[i].title;
+		// 		this.alis.id = `tab${i + 1}`;
+		// 		this.oul.appendChild(this.alis);
+		// 		// 创建li
+		// 		this.aps = document.createElement("p");
+		// 		this.aps.innerHTML = this.data[i].content;
+		// 		this.aps.id = `content${i + 1}`;
+		// 		this.odiv.appendChild(this.aps);
+		// 		// 创建p
+		// 		this.addEvent(i);
+		// 	}
+		// }
+		// Tab.prototype.addEvent = function (index) {
+		// 	let that = this;
+		// 	this.aps = document.querySelectorAll("p");
+		// 	this.alis.onclick = function () {
+		// 		for (let i = 0; i < that.aps.length; i++) {
+		// 			that.aps[i].className = "";
+		// 		}
+		// 		that.aps[index].className = "active";
+		// 	}
+		// }
+		// let f1 = new Tab(data);
+		// f1.init();
+		// 属性写在构造函数内
+		// 方法写在原型内
+
+
+
+
+			//用循环创建li
+			// for(let i=0;i<data.length;i++){
+			// 	let li=document.createElement("li")
+			// 	li.innerHTML=data[i].title
+			// 	// console.log(li)
+			// 	tab.appendChild(li)
+			// //给li添加id
+			// 	li.id=`tab${i+1}`
+			// 	li.onclick=function(){
+			// 		let a=parseInt(this.innerHTML) 
+
+			// 		let divs=document.querySelectorAll("#container>div")
+			// 		for(let i=0;i<divs.length;i++){
+			// 			if(parseInt(divs[i].innerHTML)==a){
+			// 				divs[i].className="active"
+			// 			}else{
+			// 				divs[i].className=""
+
+			// 			}
+			// 		}
+			// 	}
+			// 	let div=document.createElement("div")
+			// 		div.innerHTML=data[i].content
+			// 		div.id=`content${i+1}`
+			// 		console.log(i)
+			// 		if(i==0){
+			// 			div.className="active"
+			// 		}
+			// 		container.appendChild(div)
+
+			// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+			// for(var i=0;i<data.length;i++){
+			// 	var li=document.createElement("li");
+			// 	li.innerHTML=data[i].title;
+			// 	li.id=`tab${i+1}`
+			// 	li.onclick=function(){
+			// 		var str=this.innerHTML;
+			// 		var divs=document.querySelectorAll("#container>div");
+			// 		for(var i=0;i<divs.length;i++){
+			// 			if(divs[i].innerHTML.indexOf(str)!=-1){
+			// 				divs[i].className="active"
+			// 			}else{
+			// 				divs[i].className=""
+			// 			}
+			// 		}
+			// 	}
+			// 	tab.appendChild(li);
+
+			// 	var div=document.createElement("div");
+			// 	if(i==0){
+			// 		div.className="active";
+			// 	}
+			// 	div.innerHTML=data[i].content;
+			// 	div.id=`content${i+1}`
+			// 	container.appendChild(div);
+			// }
+	</script>
+</body>
+
+</html>

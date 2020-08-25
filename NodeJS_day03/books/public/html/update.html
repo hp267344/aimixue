@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css"/>
+	</head>
+	<body>
+		<h1>修改</h1>
+		<form action="/update" method="get">
+			<input type="hidden" name="id" value="" />
+			书名：<input name='name' /><br>
+			单价：<input name='price' /><br>
+			数量：<input name='count' /><br>
+			作者：<input name='zuozhe' /><br>
+			简介：<input name='jianjie' /><br>
+			内容：<input name='content' /><br>
+			<input type="submit"/>
+		</form>
+		<script src="../js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var id=sessionStorage.id;
+			var arr=[];
+			$.get("/getid",`id=${id}`,(data)=>{
+				for(var i in data[0]){
+					arr.push(data[0][i]);
+				}
+				
+				for(var i=0;i<arr.length;i++){
+					$("input")[i].value=arr[i];
+				}
+			},"JSON")
+		</script>
+	</body>
+</html>
